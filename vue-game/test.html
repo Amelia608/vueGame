@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="content-wrap">
+        <canvas id="c-1" height="550px" width="320px"></canvas>
+        <h3 id="loading" class="loading">loading...</h3>
+        <span class="btn-start">音乐关闭</span>
+    </div>
+    <audio id="myAudio" autoplay loop>
+        <source src="http://ojcokbt6a.bkt.clouddn.com/bgm_1.mp3" type="audio/mpeg"> 您的浏览器不支持 audio 与元素。
+    </audio>
+    <p>点击按钮播放后暂停音频。</p>
+
+    <button onclick="playAudio()" type="button">播放音频</button>
+    <button onclick="pauseAudio()" type="button">暂停音频</button>
+    <script src="./libs/jquery-3.1.0.min.js"></script>
+    <script src="./libs/ion.sound.min.js"></script>
+    <script src="./libs/ani.min.js"></script>
+    <script>
+        var x = document.getElementById("myAudio");
+
+        function playAudio() {
+            x.play();
+        }
+
+        function pauseAudio() {
+            x.pause();
+        }
+        function play_animation() {
+            var framesUrl = [];
+            for (let i = 0; i < 60; i++) {
+                framesUrl.push('images/lh_' + i + '.png');
+            }
+            // frame animation
+            var ani = new frame_ani({
+                canvasTargetId: "c-1", // target canvas ID
+                framesUrl: framesUrl, // frames url
+                loop: true, // if loop
+                height: 550, // source image's height (px)
+                width: 320, // source image's width (px)
+                frequency: 20, // count of frames in one second
+                audioIonName: "bgm_1", // ion.sound audio name
+                onComplete: function () { // complete callback
+                    // console.log("Animation loop.");
+                },
+            });
+
+            // preload & play
+            ani.initialize(() => {
+                $("#loading").hide();
+                ani.play();
+            });
+        }
+        //play_animation();
+
+        // 背景音乐
+
+    </script>
+</body>
+
+</html>

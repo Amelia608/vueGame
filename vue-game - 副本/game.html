@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>热风活动-小游戏</title>
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+	</style>
+</head>
+
+<body>
+	<div class="ser_home" id="app">
+		<div class="game-info">
+			<div class="info-wrap">
+				<div class="game-bar-wrap">
+					<div class="game-bar">
+						<span class="progess-bar" :style="{width:progress+'%'}"></span>
+					</div>
+				</div>
+				<div class="game-score">
+					<span v-html="score" style="color: #00833c;font-size: 16px;font-weight: 600;"></span>
+				</div>
+			</div>
+		</div>
+		<ul class="red_packet" id="red_packet">
+			<li v-for="(item, index) in liParams" :style="{ left: item.left, animationDuration: item.durTime, webkitAnimationDuration: item.durTime}"
+			 :class="item.cls" :data-index="index" @animationEnd="removeDom($event)" @webkitAnimationEnd="removeDom($event)" @touchstart="getMoney($event,item.score)">
+				<a href='javascript:;'>
+					<span class="score-wp" v-html="'+'+item.score"></span>
+					<i :style="{ transform: item.transforms, webkitTransform: item.transforms}">
+						<img :src="item.img" alt="">
+					</i>
+				</a>
+			</li>
+		</ul>
+		<!-- 弹出框 -->
+		<div class="md-modal modal-msg md-modal-transition" id="showModal" v-bind:class="{'md-show':gameFlag}">
+			<div class="md-modal-inner">
+				<div class="top">
+					<img v-show="suceess" src="images/hwpop-icon-success.png" alt="" width="100%">
+					<img v-show="!suceess" src="images/hwpop-icon-fail.png" alt="" width="100%">
+				</div>
+				<div class="md-content">
+					<div class="confirm-tips">
+						<p v-show="suceess">
+							<img src="images/hwicon-face-success.png" alt="" width="45">
+						</p>
+						<p v-show="!suceess">
+							<img src="images/hwicon-face-fail.png" alt="" width="45">
+						</p>
+					</div>
+					<div class="btn-wrap">
+						<p v-show="suceess">
+							<span class="btn btn-success"></span>
+						</p>
+						<p v-show="!suceess">
+							<span class="btn btn-fail" @click="gameAgain()"></span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 游戏说明 -->
+		<div class="game-sm" v-show="instructions">
+			<div class="content">
+				<h3 class="text-center">游戏说明</h3>
+				<p class="des">
+					基本操作： 水果忍者是一款容易上手的休闲游戏，只要用手指划屏幕上跳出的各种水果就能得分，另外，炸弹是不能切的。 计分规则： （1）没有Combo的情况下（一刀只切中1-2个水果），每个水果计1分。 （2）在有Combo的情况下（一刀同时切中3个以上水果），无论Combo的数量是多少，都是将切中的水果数乘以2来计分。也就是说，切两次Combo
+					3，和切一次Combo 6，能拿到的分数是一样的。
+				</p>
+			</div>
+			<div class="footer text-center">
+				<span class="btn-close" @click="closeSm()"></span>
+			</div>
+		</div>
+		<div class="md-overlay" v-show="gameFlag||instructions"></div>
+		<div class="loading" v-bind:class="{'loaded':loading}">
+			<span>
+				<img src="images/loader.gif" alt="" width="35">
+			</span>
+		</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="./libs/ion.sound.min.js"></script>
+	<script src="js/vue.min.js"></script>
+	<script src="js/index.js"></script>
+</body>
+
+</html>

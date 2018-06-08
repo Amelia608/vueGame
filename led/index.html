@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>宝马投票活动</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<div class="content-wp" id="app">
+		<img src="http://p99wl20ol.bkt.clouddn.com/car5.jpg" alt="" class="bg-img">
+		<!-- 底盘 -->
+		<div class="dp pwp">
+			<span class="round-span">
+				<i></i>
+			</span>
+			<b class="skew-line"></b>
+			<span class="txt-des">悬挂（投票数：{{arr[0]}}）</span>
+		</div>
+		<!-- 轮胎 -->
+		<div class="tyre pwp">
+			<span class="round-span">
+				<i></i>
+			</span>
+			<b class="skew-line"></b>
+			<span class="txt-des"> 轮胎（投票数：{{arr[1]}}）</span>
+		</div>
+		<!-- 排气 -->
+		<div class="gas pwp">
+			<span class="txt-des">排气（投票数：{{arr[2]}}）</span>
+			<b class="skew-line"></b>
+			<span class="round-span">
+				<i></i>
+			</span>
+		</div>
+		<!-- 刹车 -->
+		<div class="brake pwp">
+			<span class="txt-des">刹车（投票数：{{arr[3]}}）</span>
+			<b class="skew-line"></b>
+			<span class="round-span">
+				<i></i>
+			</span>
+		</div>
+		<!-- 发动机 -->
+		<div class="motor pwp">
+			<span class="txt-des">发动机（投票数：{{arr[4]}}）</span>
+			<b class="skew-line"></b>
+			<span class="round-span">
+				<i></i>
+			</span>
+		</div>
+		<!-- xDrive -->
+		<div class="xDrive pwp">
+			<span class="txt-des">xDrive（投票数：{{arr[5]}}）</span>
+			<b class="skew-line"></b>
+			<span class="round-span">
+				<i></i>
+			</span>
+		</div>
+		<div class="pop-msg" v-bind:class="{'in':msgShow}">{{msg}}</div>
+	</div>
+	<div class="loader" id="loader">
+		<div>
+			<img src="images/loader.gif" alt="" width="80">
+		</div>
+	</div>
+
+	<!-- <script src="js/jquery.min.js"></script> -->
+	<script src="js/vue.min.js"></script>
+	<script src="js/vue-resource.js"></script>
+	<script src="js/index.js"></script>
+</body>
+
+</html>

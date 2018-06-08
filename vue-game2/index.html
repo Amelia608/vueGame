@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>热风活动-小游戏</title>
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+	</style>
+</head>
+
+<body>
+	<div class="ser_home" id="app">
+		<div class="btn-game-over" @click="gameOver()">分数：
+			<span v-html="score"></span>
+		</div>
+		<ul class="red_packet" id="red_packet">
+			<li v-for="(item, index) in liParams" :style="{ left: item.left, animationDuration: item.durTime, webkitAnimationDuration: item.durTime}"
+			 :class="item.cls" :data-index="index" @animationEnd="removeDom($event)" @webkitAnimationEnd="removeDom($event)" v-tap="{method:test,params:some}">
+				<a href='javascript:;'>
+					<span class="score-wp" v-html="'+'+item.score"></span>
+					<i :style="{ transform: item.transforms, webkitTransform: item.transforms}">
+						<img :src="item.img" alt="">
+					</i>
+				</a>
+			</li>
+		</ul>
+		<div class="rmind-msg" v-bind:class="{'msg-show':gameFlag}">游戏结束</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="./libs/ion.sound.min.js"></script>
+	<script src="./libs/ani.min.js"></script>
+	<script src="js/vue.min.js"></script>
+	<script src="js/vue-tap.js"></script>
+	<script src="js/index.js"></script>
+</body>
+
+</html>

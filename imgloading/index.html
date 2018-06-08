@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <title>热风欢庆开幕</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body,
+        .content-wrap {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        .loading {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+        }
+
+        .btn-start {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            -moz-transform: translateX(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content-wrap">
+        <canvas id="c-1" height="550px" width="320px"></canvas>
+        <h3 id="loading" class="loading">loading...</h3>
+        <span class="btn-start">音乐关闭</span>
+    </div>
+    <script src="./libs/jquery-3.1.0.min.js"></script>
+    <script src="./libs/ion.sound.min.js"></script>
+    <script src="./libs/ani.min.js"></script>
+    <script src="./demo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title> hotwind欢庆开幕</title>
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+	</style>
+</head>
+
+<body>
+	<div class="ser_home" id="app">
+		<div class="game-info">
+			<div class="info-wrap">
+				<div class="game-bar-wrap">
+					<div class="game-bar">
+						<span class="progess-bar" :style="{width:progress+'%'}"></span>
+					</div>
+				</div>
+				<div class="game-score">
+					<span v-html="score" style="color: #00833c;font-size: 16px;font-weight: 600;"></span>
+				</div>
+			</div>
+		</div>
+		<ul class="red_packet" id="red_packet">
+			<li v-for="(item, index) in liParams" :style="{ left: item.left, animationDuration: item.durTime, webkitAnimationDuration: item.durTime}"
+			 :class="item.cls" :data-index="index" @animationEnd="removeDom($event)" @webkitAnimationEnd="removeDom($event)" @touchstart="getMoney($event,item.score)">
+				<a href='javascript:;'>
+					<span class="score-wp" v-html="'+'+item.score"></span>
+					<i :style="{ transform: item.transforms, webkitTransform: item.transforms}">
+						<img :src="item.img" alt="">
+					</i>
+				</a>
+			</li>
+		</ul>
+		<!-- 弹出框 -->
+		<div class="md-modal modal-msg md-modal-transition" id="showModal" v-bind:class="{'md-show':gameFlag}">
+			<div class="md-modal-inner">
+				<div class="md-content">
+					<!-- 成功弹窗内容 -->
+					<div class="confirm-tips" v-show="suceess">
+						<p class="text-center">
+							<img src="images/tzsb.jpg" alt="" width="180">
+						</p>
+					</div>
+					<!-- 失败弹窗内容 -->
+					<div class="confirm-tips" v-show="!suceess">
+						<p class="text-center">
+							<img src="images/tzcg.jpg" alt="" width="180">
+						</p>
+					</div>
+					<div class="btn-wrap">
+						<p v-show="suceess">
+							<span class="btn btn-success" @click="getTicket()"></span>
+						</p>
+						<p v-show="!suceess">
+							<span class="btn btn-fail" @click="gameAgain()"></span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 游戏说明 -->
+		<div class="game-sm" v-show="instructions">
+			<div class="content text-center">
+				<img src="images/sm-img.jpg" alt="" class="img-sm">
+				<p class="text-center">
+					<span class="btn-close" @click="closeSm()"></span>
+				</p>
+			</div>
+		</div>
+		<div class="md-overlay" v-show="gameFlag||instructions"></div>
+		<div class="loading" v-bind:class="{'loaded':loading}">
+			<span>
+				<img src="images/loader.gif" alt="" width="40" class="noevent">
+			</span>
+		</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="./libs/ion.sound.min.js"></script>
+	<script src="js/vue.min.js"></script>
+	<script src="js/vue-resource.js"></script>
+	<script src="js/index.js"></script>
+</body>
+
+</html>

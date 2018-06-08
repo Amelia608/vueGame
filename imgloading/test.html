@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var l = 5;
+			var Images = new Array(l);
+			var ImgLoaded = 0;
+
+			//设置加载队列
+			function LoadImgs() {
+				for(var i = 0; i < Images.length; i++) {
+					Images[i] = new Image();
+					downloadImage(i);
+				}
+			}
+
+			//加载单个图片文件
+			function downloadImage(i) {
+				var imageIndex = i + 1; //图片以1开始
+				Images[i].src = "images/" + imageIndex + ".png";
+				Images[i].onLoad = validateImages(i);
+			}
+
+			//验证是否成功加载完成，如不成功则重新加载
+			function validateImages(i) {
+				if(!Images[i].complete) {
+					window.setTimeout('downloadImage(' + i + ')', 200);
+				} else if(typeof Images[i].naturalWidth != "undefined" && Images[i].naturalWidth == 0) {
+					window.setTimeout('downloadImage(' + i + ')', 200);
+				} else {
+					ImgLoaded++
+					if(ImgLoaded == l) {
+						alert('图片加载完毕！');
+					}
+				}
+			}
+			LoadImgs();
+		</script>
+	</body>
+
+</html>

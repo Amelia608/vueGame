@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>宝马投票活动</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<div class="content-wp" id="app">
+		<img src="http://p99wl20ol.bkt.clouddn.com/wap_land.jpg" alt="" class="bg-img bg-img1">
+		<!--<img src="images/mobile3.jpg" alt="" class="bg-img bg-img1">-->
+		<img src="http://p99wl20ol.bkt.clouddn.com/wap_land2.jpg" alt="" class="bg-img bg-img2">
+		<!-- 底盘 -->
+		<div class="dp pwp" @click="modelShow(1)">
+			<span class="round-span">
+				<i></i>
+			</span>
+			<span class="wap-txt">悬挂</span>
+		</div>
+		<!-- 轮胎 -->
+		<div class="tyre pwp" @click="modelShow(2)">
+			<span class="round-span">
+				<i></i>
+			</span>
+			<span class="wap-txt">轮胎</span>
+		</div>
+		<!-- 排气 -->
+		<div class="gas pwp" @click="modelShow(3)">
+			<span class="wap-txt">排气</span>
+			<span class="round-span">
+				<i></i>
+			</span>
+		</div>
+		<!-- 刹车 -->
+		<div class="brake pwp" @click="modelShow(4)">
+			<span class="wap-txt">刹车</span>
+			<span class="round-span">
+				<i></i>
+			</span>
+		</div>
+		<!-- 发动机 -->
+		<div class="motor pwp" @click="modelShow(5)">
+			<span class="round-span">
+				<i></i>
+			</span>
+			<span class="wap-txt">发动机</span>
+		</div>
+		<!-- xDrive -->
+		<div class="xDrive pwp" @click="modelShow(6)">
+			<span class="wap-txt">xDrive</span>
+			<span class="round-span">
+				<i></i>
+			</span>
+		</div>
+		<div class="md-modal md-effect-11" v-bind:class="{'md-show':modShow}" id="modal-11">
+			<div class="md-content">
+				<span class="modal-title" v-text="desTitle">发动机</span>
+				<div class="row-info">
+					<span class="vote-num  vote-item">票数：{{voteNum}}</span>
+					<!-- <span class="vote-num  vote-item">票数：100000</span> -->
+					<button class="btn-vote vote-item" @click="vote">投票</button>
+					<button class="btn-vote vote-item" @click="modShow=false">关闭</button>
+				</div>
+			</div>
+		</div>
+		<div class="md-overlay" @click="modShow=false"></div>
+		<div class="pop-msg" v-bind:class="{'in':msgShow}">{{msg}}</div>
+	</div>
+
+	<div class="tips-wp" id="tips-wp">
+		<div class="content">
+			<div>
+				<p class="animated infinite pulse">
+					<span class="tips">请把手机横过来体验感受最佳哦！请关闭锁屏功能！</span>
+					<img class="tips2" src="images/tips2.png" alt="" width="260">
+				</p>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<div class="loader" id="loader">
+		<div>
+			<img src="images/loader.gif" alt="">
+		</div>
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/vue.min.js"></script>
+	<script src="js/vue-resource.js"></script>
+	<script src="js/index.js"></script>
+</body>
+
+</html>

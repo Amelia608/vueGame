@@ -1,0 +1,197 @@
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon/icomoon.eot?srf3rx");
+  src: url("../fonts/icomoon/icomoon.eot?srf3rx#iefix")
+      format("embedded-opentype"),
+    url("../fonts/icomoon/icomoon.ttf?srf3rx") format("truetype"),
+    url("../fonts/icomoon/icomoon.woff?srf3rx") format("woff"),
+    url("../fonts/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin icomoon() {
+  font-family: "icomoon";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@import "bootstrap/mixins";
+@import "bootstrap/variables";
+@import "extend";
+/* =======================================================
+*
+* 	Template Style 
+*	Edit this section
+*
+* ======================================================= */
+
+// Template Base
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: $font-primary;
+  line-height: 1.4;
+  font-size: 14px;
+  position: relative;
+}
+
+a {
+  color: $brand-primary;
+  @extend %transtion-5;
+  &:hover,
+  &:focus {
+    text-decoration: none !important;
+    color: $brand-primary;
+    outline: none;
+  }
+}
+
+p,
+ul,
+ol {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: $brand-primary; // font-weight: 300;
+  font-family: $font-primary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $brand-primary;
+  font-family: $font-primary;
+  font-weight: 400;
+}
+
+figure {
+  margin-bottom: 2em;
+}
+
+::-webkit-selection {
+  color: $brand-body-color;
+  background: $brand-selection-color;
+}
+
+::-moz-selection {
+  color: $brand-body-color;
+  background: $brand-selection-color;
+}
+
+::selection {
+  color: $brand-body-color;
+  background: $brand-selection-color;
+}
+
+.ser_home {
+  width: 100%;
+  height: 100%;
+  @extend %pos-re;
+}
+
+li {
+  list-style: none;
+}
+
+.red_packet {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 0;
+  i {
+    // width: 48px; // height: 69px;
+    display: inline-block; // background: url("../images/hongbao.png") no-repeat;
+  }
+  li {
+    position: absolute;
+    animation: all 3s linear; // top: -100px;
+    z-index: 10;
+    visibility: visible;
+    opacity: 1;
+    @extend %transtion-5;
+    &.move_1 {
+      -webkit-animation: aim_move 5s linear 1 forwards;
+      animation: aim_move 5s linear 1 forwards;
+    }
+  }
+  a {
+    display: block;
+    @extend %pos-re;
+    padding-left: 20px;
+  }
+}
+
+li.move_1 .score-wp {
+  display: none;
+}
+
+li.active .score-wp {
+  display: block;
+}
+
+li.active {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.btn-game-over {
+  position: fixed;
+  z-index: 200;
+  right: 20px;
+  top: 20px;
+}
+
+.rmind-msg {
+  @extend %translate-center-X;
+  top: 20%;
+  background: #00833c;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 2px;
+  display: none;
+  &.msg-show {
+    display: block;
+  }
+}
+
+.score-wp {
+  @extend %translate-center-Y;
+  left: 0;
+  display: inline-block;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+@keyframes aim_move {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(120vh);
+    transform: translateY(120vh);
+  }
+}

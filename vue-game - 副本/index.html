@@ -1,0 +1,106 @@
+<html>
+
+<head>
+    <title>热风欢庆开幕</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body,
+        .content-wrap {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        .loading {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+        }
+
+        .canvas {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .btn-start {
+            position: absolute;
+            width: 130px;
+            height: 62px;
+            background: url(images/hwbtn-start.png) no-repeat center center;
+            background-size: 100% 100%;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%) scale3d(1, 1, 1);
+            -webkit-transform: translateX(-50%) scale3d(1, 1, 1);
+            -moz-transform: translateX(-50%) scale3d(1, 1, 1);
+            animation: pulse 1s ease-in-out .3s infinite forwards;
+            -moz-animation: pulse 1s ease-in-out .3s infinite forwards;
+            -webkit-animation: pulse 1s ease-in-out .3s infinite forwards;
+        }
+
+        @-webkit-keyframes pulse {
+            from {
+                -webkit-transform: translateX(-50%) scale3d(1, 1, 1);
+                transform: translateX(-50%) scale3d(1, 1, 1);
+            }
+
+            50% {
+                -webkit-transform: translateX(-50%) scale3d(1.05, 1.05, 1.05);
+                transform: translateX(-50%) scale3d(1.05, 1.05, 1.05);
+            }
+
+            to {
+                -webkit-transform: translateX(-50%) scale3d(1, 1, 1);
+                transform: translateX(-50%) scale3d(1, 1, 1);
+            }
+        }
+
+        @keyframes pulse {
+            from {
+                -webkit-transform: translateX(-50%) scale3d(1, 1, 1);
+                transform: translateX(-50%) scale3d(1, 1, 1);
+            }
+
+            50% {
+                -webkit-transform: translateX(-50%) scale3d(1.05, 1.05, 1.05);
+                transform: translateX(-50%) scale3d(1.05, 1.05, 1.05);
+            }
+
+            to {
+                -webkit-transform: translateX(-50%) scale3d(1, 1, 1);
+                transform: translateX(-50%) scale3d(1, 1, 1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content-wrap">
+        <canvas id="c-1" class="canvas" height="550px" width="320px">浏览器版本过低，不支持canvas技术</canvas>
+        <h3 id="loading" class="loading">loading...</h3>
+        <span class="btn-start" onclick="goToGame();"></span>
+    </div>
+    <script src="./libs/jquery-3.1.0.min.js"></script>
+    <script src="./libs/ion.sound.min.js"></script>
+    <script src="./libs/ani.min.js"></script>
+    <script src="./js/start.js"></script>
+    <script>
+        function goToGame() {
+            if ($("#loading").hasClass("hasload")) {
+                window.location.href = "game.html";
+            }
+        }
+    </script>
+</body>
+
+</html>

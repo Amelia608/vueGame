@@ -1,0 +1,71 @@
+body{font-size:12px}
+.btn{padding:2px 4px;border-radius:1px}
+.btn-scroll-up{padding:6px 12px}
+.pagination>li>a,.pagination>li>span{padding:4px 10px}
+.page-header h1{font-size:16px;margin:0}
+.page-header h1 small{font-size:12px}
+.nav-search #search_keywords{font-size:12px}
+.modal-body h2{font-size:14px;color:#888}
+.list_btns{padding-bottom:10px}
+.alert{font-size:12px}
+.navbar .navbar-brand{font-size:18px}
+.header{line-height: 20px}
+@media only screen and (max-width:479px){.navbar:not(.navbar-collapse) .navbar-header{float:left!important}
+}@media (max-width:479px){.navbar-fixed-top+.main-container{padding-top:46px}
+}.btn,.btn-default,.btn-default.focus,.btn-default:focus,.btn.focus,.btn:focus{font-size:12px}
+.label-sm{padding:.5em .4em .5em;line-height:1.3;height:26px}
+.form-group>label[class*=col-]{font-size:12px}
+.form-group input[type=email],.form-group input[type=url],.form-group input[type=search],.form-group input[type=tel],.form-group input[type=color],.form-group input[type=text],.form-group input[type=password],.form-group input[type=datetime],.form-group input[type=datetime-local],.form-group input[type=date],.form-group input[type=month],.form-group input[type=time],.form-group input[type=week],.form-group input[type=number],.form-group select,.form-group textarea{font-size:12px}
+.widget-box-overlay{z-index:5}
+.chosen-container-single .chosen-single{color:#858585;background:#fff}
+.poweredby1{text-align:center;color:#666666 !important;font-size:13px;margin-top:30px}
+#login_error_info{text-align:center;padding:5px;margin-top:10px;margin-bottom:15px;width:100%;border:1px #FF9900 solid;background:#FFFFCC}
+.loading_div{padding-top:20%;text-align:center;color:#ffffff;font-weight:bold;font-size:15px;margin:0 auto}
+.photohandle_img_show{display:block}
+.photohandle_img_hidden{display:none}
+.img_upload_iframe{border:0px;width:350px;height:240px}
+.img_upload_reuplod{}
+.table>tbody>tr>td,.table>tbody>tr>th,.table>tfoot>tr>td,.table>tfoot>tr>th,.table>thead>tr>td,.table>thead>tr>th{vertical-align:middle}
+.label-sm{padding:.5em .4em .5em;line-height:1.3;height:26px}
+.modal-dialog{margin-top:5%}
+@media (min-width:500px){.modal-dialog{}
+}.modal-body{padding:20px}
+.modal-content{text-align:center;border-radius:5px}
+.modal-content #content{text-align:left;}
+.pagination{margin:1px 0;text-align:right}
+.modal-footer{text-align:center;background:#fff;height:45px;border-radius:2px}
+.modal-footer button{margin-top:-5px}
+.form-actions{margin-top:40px;padding:10px 20px 10px}
+.user-info{vertical-align:middle;top:0px}
+.btn-group-vertical>.btn,.btn-group>.btn{float:inherit}
+.checkbox label input[type="checkbox"].ace + .lbl,.radio label input[type="radio"].ace + .lbl{font-size:12px;margin-left: -18px;}
+.nav-tabs>li.active>a>.icon,.nav-tabs>li.active>a:focus>.icon,.nav-tabs>li.active>a:hover>.icon{color:#4C8FBD}
+.nav-tabs>li>a>.icon{font-weight:700}
+input[type='number']{-moz-appearance:textfield}
+input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.editable-buttons{margin-left:10px;line-height:30px}
+h4{font-size:14px}
+input[type="email"],input[type="url"],input[type="search"],input[type="tel"],input[type="color"],input[type="text"],input[type="password"],input[type="datetime"],input[type="datetime-local"],input[type="date"],input[type="month"],input[type="time"],input[type="week"],input[type="number"],textarea{font-size:12px}
+.nav-list > li > a{font-size:12px}
+.breadcrumb{font-size:12px}
+.footer .footer-inner .footer-content{line-height:6px}
+.rightlist{display: block;font-size: 12px}
+.brands_checkbox{min-width: 50px; float: left;font-size: 12px; margin-right: 10px;line-height: 32px;}
+.form-group label[for="formstatus"]{margin-top:-5px;}
+.remind-span{display: inline-block;height: 31px;line-height: 31px;color:red;padding-left: 10px;}
+.xr_uploadimg_thumn{margin-bottom: 10px;}
+.form-horizontal .checkbox, .form-horizontal .checkbox-inline, .form-horizontal .radio, .form-horizontal .radio-inline{padding-top: 0px;}
+.font-12{font-size:12px}
+.font-14{font-size:14px}
+.font-16{font-size:16px}
+.font-18{font-size:18px}
+.font-20{font-size:20px}
+.font-22{font-size:22px}
+.widget-main{padding:12px 0 0 0}
+.iconfont{font-size: 12px;}
+.modal-dialog .left{text-align: left};
+.lottery_msgcontent{text-align:left;width:50%;margin-left:25%}
+.popover,.popover-title{font-size: 12px;}
+.help-button{width: 26px;height: 26px;line-height:24px;color:#ff0000;}
+.badge{padding: 3px 10px;}
+.dialog_top{margin-top: 10%}
